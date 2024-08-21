@@ -1,11 +1,13 @@
 {
   "name": "dashboard-themes",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "build": "ng build"
   },
-  "private": true,
+  "files": [
+    "artifacts/styles.css"
+  ],
   "dependencies": {
     "@angular/animations": "^18.1.0",
     "@angular/cdk": "^18.1.2",

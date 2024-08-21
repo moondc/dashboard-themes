@@ -2,7 +2,20 @@
 #Exit immediately on error
 set -e
 
+echo "Ensuring publish directory exists"
+mkdir -p artifacts
+
+echo "Creating build artifacts"
 ng build
 
-echo "Setting builder to default"
-npm version patch
+echo "Copying css to styles.css"
+cp dist/dashboard/browser/styles* artifacts/styles.css
+
+echo "Bumping patch version"
+npm version patch --git-tag-version false
+
+echo "Cleaning some files"
+rm -rf dist/
+
+echo "Publishing"
+npm publish
