@@ -12,7 +12,7 @@ echo "Copying css to styles.css"
 cp dist/dashboard/browser/styles* artifacts/styles.css
 
 echo "Bumping patch version"
-npm version patch --git-tag-version false
+npm version patch --git-tag-version true
 
 echo "Cleaning some files"
 rm -rf dist/
